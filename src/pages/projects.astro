@@ -41,7 +41,7 @@ const personalProjects = [
                 {personalProjects.map(project => (
                     <div class="project-card">
                         <div class="project-image">
-                            <img src={project.image} alt={project.title}>
+                            <img src={project.image.replace('/images/', '/MyPage/images/')} alt={project.title}>
                         </div>
                         <div class="project-content">
                             <h2>{project.title}</h2>
