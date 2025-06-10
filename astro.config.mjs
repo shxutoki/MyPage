@@ -8,5 +8,7 @@ export default defineConfig({
   // 如果你需要部署到子目录，可以使用base选项
   // base: '/my-website',
   output: 'static',
-  adapter: netlify()
+  adapter: netlify({
+    functionPerRoute: false
+  })
 });
