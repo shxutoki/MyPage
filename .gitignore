@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # 忽略视频文件
 public/videos/*.mp4
+
+# Local Netlify folder
+.netlify
