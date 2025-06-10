@@ -1,0 +1,362 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "徐詩慧 - 履歴書";
+const metaDescription = "人とコンピュータのインタラクション、AR/VR、リモートコラボレーションを専門とする研究者、徐詩慧の履歴書。";
+
+// 学歴
+const education = [
+    {
+        degree: "博士課程 情報・生産・システム工学専攻",
+        institution: "早稲田大学大学院 情報生産システム研究科",
+        location: "北九州、日本",
+        period: "2019 - 現在"
+    },
+    {
+        degree: "修士課程 情報・生産・システム工学専攻",
+        institution: "早稲田大学大学院 情報生産システム研究科",
+        location: "北九州、日本",
+        period: "2017 - 2019"
+    },
+    {
+        degree: "学士課程 電子工学専攻",
+        institution: "東南大学",
+        location: "南京、中国",
+        period: "2014 - 2018"
+    }
+];
+
+// 職歴
+const experience = [
+    {
+        position: "ティーチングアシスタント",
+        institution: "インタラクティブプログラミング研究室、早稲田大学",
+        location: "北九州、日本",
+        period: "2018 - 2019",
+        description: "人とコンピュータのインタラクションとインタラクティブプログラミングの学部課程の授業をサポート。"
+    },
+    {
+        position: "共同研究インターン",
+        institution: "楽天技術研究所",
+        location: "東京、日本",
+        period: "2018 - 2021",
+        description: "ARファッションショープロジェクトとバーチャル試着システムの開発に携わる。ARアプリケーション向けのパーソナライズされた3Dヒューマンモデルの開発に貢献。"
+    }
+];
+
+// 受賞歴
+const awards = [
+    {
+        title: "早稲田大学若手研究者奨学金",
+        venue: "早稲田大学",
+        year: "2019"
+    },
+    {
+        title: "早稲田大学授業料減免奨学金",
+        venue: "早稲田大学",
+        year: "2017"
+    }
+];
+
+// スキル
+const skills = [
+    {
+        category: "研究手法",
+        items: ["ユーザー研究", "混合研究法", "ユーザビリティテスト", "アイトラッキング", "質的分析"]
+    },
+    {
+        category: "プログラミング",
+        items: ["Unity", "C#", "Python", "JavaScript", "TypeScript", "React"]
+    },
+    {
+        category: "ツール・技術",
+        items: ["AR/VR開発", "3Dモデリング", "Git", "Figma", "Adobe Creative Suite"]
+    },
+    {
+        category: "言語",
+        items: ["日本語（JLPT N1）", "英語（TOEIC 885）", "中国語（母語）"]
+    }
+];
+
+// 自己分析
+const selfAnalysis = {
+    strengths: [
+        {
+            title: "挑戦精神",
+            description: "新しいことに挑戦することを恐れず、困難な課題に直面しても諦めない性格。失敗を恐れず、むしろそこから学びを得ることを大切にしている。"
+        },
+        {
+            title: "学習意欲",
+            description: "常に新しい知識や技術を学ぶことに強い興味を持ち、変化を恐れず、むしろ積極的に受け入れる姿勢を持つ。"
+        }
+    ],
+    careerGoals: [
+        {
+            title: "短期目標",
+            description: "人とコンピュータのインタラクションの知識を活かし、実際のソフトウェア開発に応用する。ユーザーの視点に立った、より使いやすく親しみやすいアプリケーションの開発に取り組む。"
+        },
+        {
+            title: "長期目標",
+            description: "技術と人々の間に橋を架け、誰もが簡単に技術の恩恵を受けられる世界を目指す。技術をより温かみのある、身近な存在にすることで、人々の生活をより便利で幸せなものにする。"
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <section class="cv-header">
+        <div class="container">
+            <h1 class="page-title">履歴書</h1>
+            <div class="cv-actions">
+                <a href="/cv-jp.pdf" class="btn btn-secondary" download>
+                    <span>PDFをダウンロード</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">学歴</h2>
+            <div class="cv-list">
+                {education.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.degree}</h3>
+                            <span class="cv-item-period">{item.period}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.institution}, {item.location}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">職歴</h2>
+            <div class="cv-list">
+                {experience.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.position}</h3>
+                            <span class="cv-item-period">{item.period}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.institution}, {item.location}</p>
+                        <p class="cv-item-description">{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">受賞歴</h2>
+            <div class="cv-list">
+                {awards.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.title}</h3>
+                            <span class="cv-item-period">{item.year}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.venue}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">スキル</h2>
+            <div class="skills-grid">
+                {skills.map(category => (
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">{category.category}</h3>
+                        <ul class="skill-list">
+                            {category.items.map(skill => (
+                                <li class="skill-item">{skill}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">自己分析</h2>
+            <div class="self-analysis">
+                <div class="strengths">
+                    <h3>強み</h3>
+                    <div class="strengths-list">
+                        {selfAnalysis.strengths.map(strength => (
+                            <div class="strength-item">
+                                <h4>{strength.title}</h4>
+                                <p>{strength.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                <div class="career-goals">
+                    <h3>キャリア目標</h3>
+                    <div class="goals-list">
+                        {selfAnalysis.careerGoals.map(goal => (
+                            <div class="goal-item">
+                                <h4>{goal.title}</h4>
+                                <p>{goal.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    .cv-header {
+        padding: 3rem 0 2rem;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-bottom: 1.5rem;
+    }
+    
+    .cv-actions {
+        margin-bottom: 1.5rem;
+    }
+    
+    .cv-section {
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .cv-section:last-child {
+        border-bottom: none;
+    }
+    
+    .cv-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .cv-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .cv-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .cv-item-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin: 0;
+    }
+    
+    .cv-item-period {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+    
+    .cv-item-institution {
+        color: var(--color-primary);
+        font-weight: 500;
+        margin: 0;
+    }
+    
+    .cv-item-description {
+        color: var(--color-text);
+        margin: 0.5rem 0 0;
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .skill-category-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+    }
+    
+    .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .skill-item {
+        color: var(--color-text);
+        margin-bottom: 0.5rem;
+    }
+
+    .self-analysis {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .strengths, .career-goals {
+        background-color: var(--color-background);
+        padding: 2rem;
+        border-radius: 8px;
+        border: 1px solid var(--color-border);
+    }
+
+    .strengths h3, .career-goals h3 {
+        font-size: 1.5rem;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+    }
+
+    .strengths-list, .goals-list {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    .strength-item, .goal-item {
+        background-color: var(--color-background-alt);
+        padding: 1.5rem;
+        border-radius: 6px;
+    }
+
+    .strength-item h4, .goal-item h4 {
+        font-size: 1.1rem;
+        color: var(--color-primary);
+        margin-bottom: 0.75rem;
+        font-weight: 500;
+    }
+
+    .strength-item p, .goal-item p {
+        color: var(--color-text);
+        margin: 0;
+        line-height: 1.6;
+    }
+
+    @media (min-width: 768px) {
+        .self-analysis {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style> 

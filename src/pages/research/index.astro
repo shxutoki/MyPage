@@ -1,0 +1,185 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Research - Shihui Xu";
+const metaDescription = "Explore my research projects in Human-Computer Interaction and Adaptive Interfaces.";
+
+// 你可以在这里定义研究项目数据，或者从外部JSON文件导入
+const researchProjects = [
+    {
+        title: "Shared AR Shopping Experience",
+        slug: "shared-ar-shopping",
+        image: "/images/shared-ar-shopping-page/video-thumbnail.jpg",
+        description: "Creating interfaces that intelligently adapt to individual user needs and preferences.",
+        tags: ["Collaborative Shopping", "AR", "User Modeling", "Personalization"]
+    },
+    {
+        title: "Drone-enhanced Remote Collaboration",
+        slug: "drone-remote-collaboration",
+        image: "/images/drone-remote-collaboration-page/featured-image.png",
+        description: "Designing intuitive interaction models for virtual reality environments.",
+        tags: ["VR", "Human-Drone Interaction", "Remote Collaboration"]
+    },
+    {
+        title: "Personal Daily Life Fashion Show",
+        slug: "personal-daily-life-fashion-show",
+        image: "/images/personal-daily-life-fashion-show-page/video-thumbnail.png",
+        description: "Exploring innovative ways to showcase daily fashion through interactive technology.",
+        tags: ["Fashion", "Interactive Design", "User Experience"]
+    },
+    {
+        title: "Sharing AR Experience Between HMD and Non-HMD Users",
+        slug: "sharing-ar-experience",
+        image: "/images/sharing-ar-experience-page/video-thumbnail.png",
+        description: "Investigating methods to bridge the gap between HMD and non-HMD users in AR environments.",
+        tags: ["AR", "HMD", "Collaborative Experience"]
+    }    
+];
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <section class="research-header">
+        <div class="container">
+            <h1 class="page-title">Research</h1>
+            <p class="page-description">Exploring the future of human-computer interaction through adaptive, intuitive, and context-aware interfaces.</p>
+        </div>
+    </section>
+    
+    <section class="research-content">
+        <div class="container">
+            <div class="research-grid">
+                {researchProjects.map(project => (
+                    <div class="research-card">
+                        <div style="overflow: hidden;">
+                            <img src={project.image} alt={project.title} class="card-img">
+                        </div>
+                        <div class="card-content">
+                            <h3>{project.title}</h3>
+                            <p>{project.description}</p>
+                            <div class="tags">
+                                {project.tags.map(tag => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                            <a href={`/research/${project.slug}`} class="card-link">Learn more →</a>
+                        </div>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    /* 研究页面特定样式 */
+    .research-header {
+        padding: 3rem 0 2rem;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+    }
+    
+    .page-description {
+        max-width: 700px;
+        color: var(--color-text-light);
+        font-size: 1.1rem;
+    }
+    
+    .research-content {
+        padding: 3rem 0;
+    }
+    
+    .research-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+    }
+    
+    .research-card {
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 1px solid var(--color-border);
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+    }
+    
+    .research-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+    }
+    
+    .card-img {
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .research-card:hover .card-img {
+        transform: scale(1.03);
+    }
+    
+    .card-content {
+        padding: 1.5rem;
+        flex: 1;
+    }
+    
+    .card-content h3 {
+        font-size: 1.15rem;
+        margin-bottom: 0.75rem;
+        font-weight: 500;
+        color: var(--color-text);
+        transition: color 0.3s ease;
+    }
+    
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin: 1rem 0;
+    }
+    
+    .tag {
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        padding: 0.2rem 0.65rem;
+        border-radius: 2px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .card-link {
+        color: var(--color-primary);
+        font-weight: 500;
+        transition: color 0.2s ease;
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+    
+    .card-link:hover {
+        color: var(--color-accent);
+    }
+    
+    @media (max-width: 768px) {
+        .research-card {
+            flex-direction: column;
+        }
+        
+        .card-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+</style> 

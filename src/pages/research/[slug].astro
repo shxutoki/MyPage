@@ -1,0 +1,548 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+// 获取所有研究项目数据
+const researchProjects = [
+    {
+        title: "Shared AR Shopping Experience",
+        slug: "shared-ar-shopping",
+        image: "/images/shared-ar-shopping-page/video-thumbnail.jpg",
+        shortDescription: "Using personalized avatars and shared gazes to create collaborative shopping experiences in Augmented Reality.",
+        fullDescription: `This research explores how augmented reality can enhance collaborative shopping experiences. 
+        We developed a system that uses personalized avatars and shared gaze visualization to improve social presence 
+        and communication between remote shoppers. Our work contributes to understanding how AR can facilitate 
+        natural social interactions in shopping contexts.`,
+        tags: ["AR", "MR", "Collaborative Shopping Experience", "Personalized Avatar"],
+        videoUrl: "https://www.youtube.com/embed/wrMuyrzcHFs",
+        publications: [
+            {
+                title: "Shared AR Shopping Experience: Enhancing Social Presence through Personalized Avatars and Shared Gaze",
+                authors: "Shihui Xu, et al.",
+                venue: "International Journal of Human-Computer Interaction",
+                year: "2024",
+                link: "https://www.tandfonline.com/doi/epdf/10.1080/10447318.2024.2381923"
+            }
+        ],
+        timeline: "2023-2024",
+        team: ["Shihui Xu", "Prof. Fujimura"],
+        keyFindings: [
+            "Personalized avatars significantly improve social presence in AR shopping",
+            "Shared gaze visualization enhances collaborative decision-making",
+            "Natural interaction patterns emerge in AR shopping environments"
+        ],
+        abstract: `This paper presents a novel approach to enhancing collaborative shopping experiences in augmented reality (AR). 
+        We investigate how personalized avatars and shared gaze visualization can improve social presence and communication 
+        between remote shoppers. Our system enables users to see each other's avatars and gaze directions in real-time, 
+        creating a more natural and engaging shopping experience.`,
+        methodology: [
+            "User Study Design",
+            "System Implementation",
+            "Data Collection",
+            "Analysis Methods"
+        ],
+        results: [
+            "Improved social presence through personalized avatars",
+            "Enhanced communication with shared gaze visualization",
+            "Positive user feedback on the collaborative experience"
+        ],
+        futureWork: [
+            "Integration with existing e-commerce platforms",
+            "Support for larger group shopping sessions",
+            "Enhanced avatar customization options"
+        ],
+        images: [
+            {
+                url: "/images/project1/image1.jpg",
+                caption: "System Overview"
+            },
+            {
+                url: "/images/project1/image2.jpg",
+                caption: "User Interface"
+            }
+        ]
+    },
+    {
+        title: "Drone-enhanced MR Remote Collaboration",
+        slug: "drone-remote-collaboration",
+        image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&q=80&w=800",
+        shortDescription: "Developing real-time gesture recognition systems using deep learning for human-computer interaction.",
+        fullDescription: `This research focuses on creating an efficient and accurate gesture recognition system using deep learning techniques. 
+        The system can recognize complex hand gestures in real-time, enabling natural interaction with computers and devices.`,
+        tags: ["AI", "Deep Learning", "Computer Vision", "HCI"],
+        videoUrl: "https://www.youtube.com/embed/example2",
+        publications: [
+            {
+                title: "Real-time Gesture Recognition Using Deep Learning",
+                authors: "Shihui Xu, et al.",
+                venue: "ACM CHI Conference",
+                year: "2023",
+                link: "https://example.com/paper2"
+            }
+        ],
+        timeline: "2022-2023",
+        team: ["Shihui Xu", "Prof. Smith", "Dr. Johnson"],
+        keyFindings: [
+            "Achieved 95% accuracy in real-time gesture recognition",
+            "Reduced latency to under 50ms",
+            "Successfully implemented on mobile devices"
+        ],
+        abstract: `This paper presents a novel deep learning approach for real-time gesture recognition. 
+        Our system achieves high accuracy while maintaining low latency, making it suitable for practical applications.`,
+        methodology: [
+            "Data Collection and Preprocessing",
+            "Model Architecture Design",
+            "Training and Optimization",
+            "Performance Evaluation"
+        ],
+        results: [
+            "High accuracy in complex environments",
+            "Low computational requirements",
+            "Robust to lighting variations"
+        ],
+        futureWork: [
+            "Support for more complex gestures",
+            "Integration with AR/VR systems",
+            "Multi-person gesture recognition"
+        ],
+        images: [
+            {
+                url: "/images/project2/image1.jpg",
+                caption: "System Architecture"
+            },
+            {
+                url: "/images/project2/image2.jpg",
+                caption: "Gesture Recognition Demo"
+            }
+        ]
+    }
+];
+
+// 添加 getStaticPaths 函数
+export function getStaticPaths() {
+    return researchProjects.map(project => ({
+        params: { slug: project.slug },
+        props: { project }
+    }));
+}
+
+// 获取当前项目的 slug
+const { slug } = Astro.params;
+
+// 查找对应的项目
+const project = researchProjects.find(p => p.slug === slug);
+
+// 如果项目不存在，返回 404
+if (!project) {
+    return Astro.redirect('/404');
+}
+
+const title = `${project.title} - Shihui Xu`;
+const metaDescription = project.shortDescription;
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <article class="project-detail">
+        <header class="project-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-text">
+                        <h1 class="project-title">{project.title}</h1>
+                        <p class="project-subtitle">{project.shortDescription}</p>
+                        <div class="project-meta">
+                            <span class="timeline">{project.timeline}</span>
+                            <div class="project-tags">
+                                {project.tags.map(tag => (
+                                    <span class="tag">{tag}</span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    {project.image && (
+                        <div class="header-image">
+                            <img src={project.image} alt={project.title}>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </header>
+
+        <div class="project-content">
+            <div class="container">
+                <div class="content-grid">
+                    <main class="main-content">
+                        <section class="project-abstract">
+                            <h2>Abstract</h2>
+                            <p>{project.abstract}</p>
+                        </section>
+
+                        {project.videoUrl && (
+                            <section class="project-video">
+                                <h2>Video</h2>
+                                <div class="video-container">
+                                    <iframe 
+                                        src={project.videoUrl}
+                                        title="Project Video"
+                                        frameborder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>
+                                    </iframe>
+                                </div>
+                            </section>
+                        )}
+
+                        <section class="project-methodology">
+                            <h2>Methodology</h2>
+                            <ul>
+                                {project.methodology.map(item => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section class="project-results">
+                            <h2>Results</h2>
+                            <ul>
+                                {project.results.map(result => (
+                                    <li>{result}</li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        <section class="project-future">
+                            <h2>Future Work</h2>
+                            <ul>
+                                {project.futureWork.map(item => (
+                                    <li>{item}</li>
+                                ))}
+                            </ul>
+                        </section>
+
+                        {project.images && project.images.length > 0 && (
+                            <section class="project-gallery">
+                                <h2>Gallery</h2>
+                                <div class="gallery-grid">
+                                    {project.images.map(image => (
+                                        <figure class="gallery-item">
+                                            <img src={image.url} alt={image.caption}>
+                                            <figcaption>{image.caption}</figcaption>
+                                        </figure>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+                    </main>
+
+                    <aside class="project-sidebar">
+                        <div class="sidebar-section team-section">
+                            <h3>Team</h3>
+                            <ul class="team-list">
+                                {project.team.map(member => (
+                                    <li class="team-member">{member}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section findings-section">
+                            <h3>Key Findings</h3>
+                            <ul class="findings-list">
+                                {project.keyFindings.map(finding => (
+                                    <li class="finding-item">{finding}</li>
+                                ))}
+                            </ul>
+                        </div>
+
+                        <div class="sidebar-section publications-section">
+                            <h3>Publications</h3>
+                            <ul class="publications-list">
+                                {project.publications.map(pub => (
+                                    <li class="publication-item">
+                                        <h4 class="pub-title">{pub.title}</h4>
+                                        <p class="pub-authors">{pub.authors}</p>
+                                        <p class="pub-venue">
+                                            <em>{pub.venue}</em> ({pub.year})
+                                        </p>
+                                        {pub.link && (
+                                            <a href={pub.link} target="_blank" rel="noopener noreferrer" class="pub-link">
+                                                View Publication →
+                                            </a>
+                                        )}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </article>
+</MainLayout>
+
+<style>
+    .project-detail {
+        padding: 0;
+    }
+
+    .project-header {
+        background-color: var(--color-background);
+        padding: 4rem 0;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .header-content {
+        display: flex;
+        gap: 3rem;
+        align-items: center;
+    }
+
+    .header-text {
+        flex: 1;
+    }
+
+    .header-image {
+        width: 40%;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+    }
+
+    .header-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+    }
+
+    .project-subtitle {
+        font-size: 1.2rem;
+        color: var(--color-text-light);
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .project-meta {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .timeline {
+        font-size: 1rem;
+        color: var(--color-text-light);
+    }
+
+    .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tag {
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        padding: 0.2rem 0.65rem;
+        border-radius: 2px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+
+    .content-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        padding: 2rem 0 4rem;
+    }
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .main-content section {
+        margin-bottom: 2rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--color-primary);
+    }
+
+    .main-content p {
+        color: var(--color-text-light);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .main-content ul {
+        list-style-type: disc;
+        padding-left: 1.5rem;
+        color: var(--color-text-light);
+        line-height: 1.8;
+    }
+
+    .main-content li {
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+
+    .project-sidebar {
+        position: sticky;
+        top: 2rem;
+        height: fit-content;
+    }
+
+    .sidebar-section {
+        background-color: var(--color-background-alt);
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+        border: 1px solid var(--color-border);
+    }
+
+    .sidebar-section h3 {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 1rem;
+        color: var(--color-text);
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .team-list, .findings-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .team-member, .finding-item {
+        margin-bottom: 0.75rem;
+        color: var(--color-text-light);
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .publications-list {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .publication-item {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .publication-item:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+    }
+
+    .pub-title {
+        font-size: 1rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: var(--color-text);
+    }
+
+    .pub-authors {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.25rem;
+    }
+
+    .pub-venue {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        margin-bottom: 0.5rem;
+    }
+
+    .pub-link {
+        color: var(--color-primary);
+        text-decoration: none;
+        font-size: 0.9rem;
+        font-weight: 500;
+        display: inline-block;
+    }
+
+    .pub-link:hover {
+        color: var(--color-accent);
+    }
+
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .gallery-item {
+        margin: 0;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+    }
+
+    .gallery-item figcaption {
+        margin-top: 0.5rem;
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+        }
+
+        .header-image {
+            width: 100%;
+        }
+
+        .content-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .project-sidebar {
+            position: static;
+        }
+    }
+</style> 

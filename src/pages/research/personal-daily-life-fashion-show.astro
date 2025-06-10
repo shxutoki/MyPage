@@ -1,0 +1,448 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Personal Daily Life Fashion Show - Research Project";
+const metaDescription = "Research on exploring innovative ways to showcase daily fashion through interactive technology.";
+
+// 项目信息
+const project = {
+    title: "Personal Daily Life Fashion Show",
+    featuredImage: "/images/personal-daily-life-fashion-show-page/featured-image.png",
+    description: "This research explores innovative ways to showcase daily fashion through interactive technology, creating a personalized and engaging experience for users to express their style.",
+    dateStart: "2019-09",
+    dateEnd: "2021-03",
+    funding: "",
+    collaborators: [
+        {
+            name: "Shihui Xu",
+            role: "Student Researcher",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Yuhan Liu",
+            role: "Student Researcher",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Yuzhao Liu",
+            role: "Student Researcher",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Kelvin Cheng",
+            role: "Researcher",
+            affiliation: "Rakuten Institute of Technology",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Soh Masuko",
+            role: "Researcher",
+            affiliation: "Rakuten Institute of Technology",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Jiro Tanaka",
+            role: "Supervisor",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        }
+    ],
+    relatedPublications: [
+        {
+            title: "Augmented Reality Fashion Show Using Personalized 3D Human Models",
+            venue: "International Conference on Human-Computer Interaction",
+            link: "#"
+        },
+        {
+            title: "Comparing VR- and AR-Based Try-On Systems Using Personalized Avatars",
+            venue: "Electronics",
+            link: "#"
+        },
+        {
+            title: "3D Virtual Try-On System Using Personalized Avatars: Augmented Walking in the Real World",
+            venue: "Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)",
+            link: "#"
+        },
+        {
+            title: "Rethinking the Fashion Show: A Personal Daily Life Show Using Augmented Reality",
+            venue: "Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)",
+            link: "#"
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <div class="container project-container">
+        <div class="project-header">
+            <h1 class="project-title">{project.title}</h1>
+            <div class="project-meta">
+                <span class="project-date">{project.dateStart} – {project.dateEnd}</span>
+                <span class="project-funding">{project.funding}</span>
+            </div>
+        </div>
+        
+        <div class="project-featured-image">
+            <img src={project.featuredImage} alt={project.title}>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-main">
+                <h2>Overview</h2>
+                <div class="comparison-image">
+                    <img src="/images/personal-daily-life-fashion-show-page/comparison-image.png" alt="Comparison of Personal Daily Life Fashion Show with Traditional Fashion Show">
+                </div>
+                <p>Traditional fashion shows are typically professional and exclusive in nature, making them inaccessible to the general public. Additionally, since fashion show garments are often specially designed, they are difficult for ordinary people to obtain, making it challenging to organize fashion shows. This research aims to rethink the design of fashion shows and explore how future fashion shows could be redesigned.</p>
+                
+                <p>We propose an Augmented Reality (AR) personal daily life show system that enables users to virtually attend a fashion show customized for themselves in their own environment. The system creates personalized virtual models for each user, enhanced with animations that can interact with physical objects in the real environment. Evaluation results demonstrate that such personal daily life shows can improve user experience and narrow the gap between fashion shows and users' daily lives.</p>
+                
+                <h2>Research Objectives</h2>
+                <ul>
+                    <li>Redesign the form and experience of future fashion shows</li>
+                    <li>Explore the role of AR technology in enhancing consumer shopping experience</li>
+                    <li>Narrow the gap between fashion shows and users' daily lives</li>
+                    <li>Increase the feasibility of general consumer participation in fashion shows</li>
+                </ul>
+                
+                <h2>Innovations</h2>
+                <ul>
+                    <li>Generation of life-sized personalized 3D human models</li>
+                    <li>Creation of 3D garment models from 2D shopping website images</li>
+                    <li>Implementation of interaction between personalized virtual models and the real physical environment</li>
+                </ul>
+                
+                <h2>Key Contributions</h2>
+                <ul>
+                    <li>Conceptual design and proof-of-concept prototype implementation of the personal daily life show</li>
+                    <li>Quantitative and qualitative evaluation demonstrating the system's effectiveness in narrowing the gap between fashion shows and users' daily lives</li>
+                </ul>
+                
+                <h2>Technical Features</h2>
+                <ul>
+                    <li>Personalized 3D human model generation</li>
+                    <li>2D to 3D garment model conversion</li>
+                    <li>Real-time interaction in augmented reality environment</li>
+                    <li>Dynamic interaction between virtual models and physical environment</li>
+                </ul>
+                
+                <h2>Methodology</h2>
+                <p>Our research employs a mixed-methods approach:</p>
+                <ol>
+                    <li>User interviews and surveys to understand fashion expression needs</li>
+                    <li>Prototype development and iterative testing</li>
+                    <li>User studies to evaluate the system's effectiveness</li>
+                    <li>Analysis of user engagement and satisfaction metrics</li>
+                </ol>
+                
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Interactive outfit visualization</li>
+                    <li>Personalized fashion show creation</li>
+                </ul>
+                
+                <h2>Demo Video</h2>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/86YXBnf49oU"
+                        title="Personal Daily Life Fashion Show Demo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <h2>Future Directions</h2>
+                <p>Future work will focus on:</p>
+                <ul>
+                    <li>Integration with existing fashion platforms</li>
+                    <li>Enhanced AI-powered style recommendations</li>
+                </ul>
+            </div>
+            
+            <div class="project-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Team Members</h3>
+                    <div class="team-members">
+                        {project.collaborators.map(member => (
+                            <div class="team-member">
+                                <img src={member.avatar} alt={member.name} class="member-avatar">
+                                <div class="member-info">
+                                    <div class="member-name">{member.name}</div>
+                                    <div class="member-role">{member.role}, {member.affiliation}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Related Publications</h3>
+                    <ul class="related-publications">
+                        {project.relatedPublications.map(pub => (
+                            <li>
+                                <a href={pub.link}>{pub.title}</a>
+                                <span class="publication-venue">{pub.venue}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+    .project-container {
+        padding: 2rem 0 4rem;
+    }
+    
+    .project-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-family: var(--font-serif);
+        color: var(--color-text);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        color: var(--color-text-light);
+    }
+    
+    .project-featured-image {
+        margin-bottom: 2.5rem;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .project-featured-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+
+    .comparison-image {
+        margin: 1.5rem 0;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .comparison-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: contain;
+    }
+    
+    
+    .project-video {
+        margin: 2.5rem 0;
+        text-align: center;
+    }
+    
+    .project-video h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 宽高比 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin: 1.5rem auto;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .project-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .project-main h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        color: var(--color-text);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-main h2:first-child {
+        margin-top: 0;
+    }
+    
+    .project-main p, 
+    .project-main ul, 
+    .project-main ol {
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .project-main ul, 
+    .project-main ol {
+        padding-left: 1.5rem;
+    }
+    
+    .project-main li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-main strong {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+    
+    .project-sidebar {
+        position: sticky;
+        top: 6rem;
+        align-self: start;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 2.5rem;
+        background-color: var(--color-background);
+        border-radius: 5px;
+        padding: 1.5rem;
+        border: 1px solid var(--color-border);
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+        color: var(--color-text);
+    }
+    
+    .sidebar-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .team-member {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .member-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-primary-light);
+    }
+    
+    .member-info {
+        flex-grow: 1;
+    }
+    
+    .member-name {
+        font-weight: 500;
+        color: var(--color-text);
+    }
+    
+    .member-role {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    
+    .related-publications li {
+        margin-bottom: 1rem;
+    }
+    
+    .related-publications a {
+        display: block;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+    
+    .related-publications a:hover {
+        color: var(--color-accent);
+    }
+    
+    .publication-venue {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+        .project-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-sidebar {
+            position: static;
+            margin-top: 2rem;
+        }
+        
+        .video-container {
+            max-width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+</style> 

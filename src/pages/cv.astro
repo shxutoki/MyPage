@@ -1,0 +1,275 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "Shihui Xu - Curriculum Vitae";
+const metaDescription = "Academic curriculum vitae of Shihui Xu, researcher in Human-Computer Interaction, AR/VR, and Remote Collaboration.";
+
+// Education
+const education = [
+    {
+        degree: "Ph.D. in Information, Production and Systems Engineering",
+        institution: "Graduate School of Information, Production and Systems, Waseda University",
+        location: "Kitakyushu, Japan",
+        period: "2019 - Present"
+    },
+    {
+        degree: "M.S. in Information, Production and Systems Engineering",
+        institution: "Graduate School of Information, Production and Systems, Waseda University",
+        location: "Kitakyushu, Japan",
+        period: "2017 - 2019"
+    },
+    {
+        degree: "B.S. in Electronics Engineering",
+        institution: "Southeast University",
+        location: "Nanjing, China",
+        period: "2014 - 2018"
+    }
+];
+
+// Experience
+const experience = [
+    {
+        position: "Teaching Assistant",
+        institution: "Interactive Programming Lab, Waseda University",
+        location: "Kitakyushu, Japan",
+        period: "2018 - 2019",
+        description: "Assisted in teaching undergraduate courses on Human-Computer Interaction and Interactive Programming."
+    },
+    {
+        position: "Joint Research Intern",
+        institution: "Rakuten Institute of Technology",
+        location: "Tokyo, Japan",
+        period: "2018 - 2021",
+        description: "Collaborated on AR fashion show projects and virtual try-on systems. Contributed to the development of personalized 3D human models for AR applications."
+    }
+];
+
+// Awards
+const awards = [
+    {
+        title: "Waseda University Young Researcher Scholarship",
+        venue: "Waseda University",
+        year: "2019"
+    },
+    {
+        title: "Waseda University Tuition Reduction Scholarship",
+        venue: "Waseda University",
+        year: "2017"
+    }
+];
+
+// Skills
+const skills = [
+    {
+        category: "Research Methods",
+        items: ["User Studies", "Mixed Methods Research", "Usability Testing", "Eye Tracking", "Qualitative Analysis"]
+    },
+    {
+        category: "Programming",
+        items: ["Unity", "C#", "Python", "JavaScript", "TypeScript", "React"]
+    },
+    {
+        category: "Tools & Technologies",
+        items: ["AR/VR Development", "3D Modeling", "Git", "Figma", "Adobe Creative Suite"]
+    },
+    {
+        category: "Languages",
+        items: ["Japanese (JLPT N1)", "English (TOEIC 885)", "Chinese (Native)"]
+    }
+];
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <section class="cv-header">
+        <div class="container">
+            <h1 class="page-title">Curriculum Vitae</h1>
+            <div class="cv-actions">
+                <a href="/cv.pdf" class="btn btn-secondary" download>
+                    <span>Download PDF</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="cv-list">
+                {education.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.degree}</h3>
+                            <span class="cv-item-period">{item.period}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.institution}, {item.location}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="cv-list">
+                {experience.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.position}</h3>
+                            <span class="cv-item-period">{item.period}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.institution}, {item.location}</p>
+                        <p class="cv-item-description">{item.description}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">Awards & Honors</h2>
+            <div class="cv-list">
+                {awards.map(item => (
+                    <div class="cv-item">
+                        <div class="cv-item-header">
+                            <h3 class="cv-item-title">{item.title}</h3>
+                            <span class="cv-item-period">{item.year}</span>
+                        </div>
+                        <p class="cv-item-institution">{item.venue}</p>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="cv-section">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                {skills.map(category => (
+                    <div class="skill-category">
+                        <h3 class="skill-category-title">{category.category}</h3>
+                        <ul class="skill-list">
+                            {category.items.map(skill => (
+                                <li class="skill-item">{skill}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ))}
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    .cv-header {
+        padding: 3rem 0 2rem;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-bottom: 1.5rem;
+    }
+    
+    .cv-actions {
+        margin-bottom: 1.5rem;
+    }
+    
+    .cv-section {
+        padding: 3rem 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .cv-section:last-child {
+        border-bottom: none;
+    }
+    
+    .cv-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    
+    .cv-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .cv-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .cv-item-title {
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: var(--color-text);
+        margin: 0;
+    }
+    
+    .cv-item-period {
+        color: var(--color-text-light);
+        font-size: 0.9rem;
+    }
+    
+    .cv-item-institution {
+        color: var(--color-primary);
+        font-weight: 500;
+        margin: 0;
+    }
+    
+    .cv-item-description {
+        color: var(--color-text);
+        margin: 0.5rem 0 0;
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+    
+    .skill-category-title {
+        font-size: 1.1rem;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    
+    .skill-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .skill-item {
+        display: inline-block;
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        padding: 0.3rem 0.8rem;
+        margin: 0 0.5rem 0.5rem 0;
+        border-radius: 2px;
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+        .cv-item-header {
+            flex-direction: column;
+            gap: 0.25rem;
+            align-items: flex-start;
+        }
+        
+        .skills-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 

@@ -1,0 +1,571 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "Publications - Shihui Xu";
+const metaDescription = "Academic publications and research papers by Shihui Xu.";
+
+interface Publication {
+    title: string;
+    authors: string;
+    venue: string;
+    abstract: string;
+    tags: string[];
+    type: string;
+    image?: string;
+    links: {
+        pdf: string;
+        doi: string;
+        bibtex: string;
+        project?: string;
+    };
+}
+
+const publicationsByYear: Record<string, Publication[]> = {
+    "2025": [
+        {
+            title: "Exploring Human Reactions to Telepresence Drones: A User Study on Safety and Trust Using a Simulated Drone in a VR Environment",
+            authors: "Shihui Xu, Like Wu, Wenjie Liao, and Shigeru Fujimura",
+            venue: "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+            abstract: "This paper presents a user study within a simulated Virtual Reality (VR) remote collaboration system to shed light on users' perceived safety and trust regarding telepresence drones.",
+            tags: ["Human-Drone Interaction", "VR", "Telepresence"],
+            type: "conference-paper",
+            links: {
+                pdf: "/papers/Exploring2025.pdf",
+                doi: "https://doi.org/10.1109/VRW66409.2025.00397",
+                bibtex: "@inproceedings{xu2025exploring,\n  title={Exploring Human Reactions to Telepresence Drones: A User Study on Safety and Trust Using a Simulated Drone in a VR Environment},\n  author={Xu, Shihui and Wu, Like and Liao, Wenjie and Fujimura, Shigeru},\n  booktitle={2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)},\n  pages={1502--1503},\n  year={2025},\n  organization={IEEE}\n}"
+            }
+        },
+        {
+            title: "A Novel Zero-Shot Learning Method with Feature Generation for Intelligent Fault Diagnosis",
+            authors: "Wenjie Liao, Like Wu, Shihui Xu, and Shigeru Fujimura",
+            venue: "IEEE Transactions on Industrial Informatics",
+            abstract: "This paper presents a novel zero-shot learning method for intelligent fault diagnosis.",
+            tags: ["Fault Diagnosis", "Zero-Shot Learning", "Industrial Informatics"],
+            type: "journal-paper",
+            links: {
+                pdf: "",
+                doi: "https://doi.org/10.1109/TII.2025.3526478",
+                bibtex: "@article{liao2025novel,\n  title={A Novel Zero-Shot Learning Method with Feature Generation for Intelligent Fault Diagnosis},\n  author={Liao, Wenjie and Wu, Like and Xu, Shihui and Fujimura, Shigeru},\n  journal={IEEE Transactions on Industrial Informatics},\n  year={2025},\n  publisher={IEEE}\n}"
+            }
+        },
+        {
+            title: "Cycle-Consistent Generating Network Based on Semantic Distance for Zero-Shot Fault Diagnosis",
+            authors: "Wenjie Liao, Like Wu, Shihui Xu, and Shigeru Fujimura",
+            venue: "IEEE Transactions on Instrumentation and Measurement",
+            abstract: "This paper introduces a cycle-consistent generating network based on semantic distance for zero-shot fault diagnosis.",
+            tags: ["Fault Diagnosis", "Zero-Shot Learning", "Measurement"],
+            type: "journal-paper",
+            links: {
+                pdf: "",
+                doi: "https://doi.org/10.1109/TIM.2025.3545713",
+                bibtex: "@article{liao2025cycle,\n  title={Cycle-Consistent Generating Network Based on Semantic Distance for Zero-Shot Fault Diagnosis},\n  author={Liao, Wenjie and Wu, Like and Xu, Shihui and Fujimura, Shigeru},\n  journal={IEEE Transactions on Instrumentation and Measurement},\n  year={2025},\n  publisher={IEEE}\n}"
+            }
+        }
+    ],
+    "2024": [
+        {
+            title: "Enhancing Remote Collaboration Through Drone-Driven Agent and Mixed Reality",
+            authors: "Shihui Xu, Like Wu, Wenjie Liao, and Shigeru Fujimura",
+            venue: "International Conference on Human-Computer Interaction",
+            abstract: "This paper explores the enhancement of remote collaboration through the integration of drone-driven agents and mixed reality technologies.",
+            tags: ["Remote Collaboration", "Drone", "Mixed Reality"],
+            type: "conference-paper",
+            links: {
+                pdf: "/papers/Drone2024.pdf",
+                doi: "https://doi.org/10.1007/978-3-031-61044-8_9",
+                bibtex: "@inproceedings{xu2024enhancing,\n  title={Enhancing Remote Collaboration Through Drone-Driven Agent and Mixed Reality},\n  author={Xu, Shihui and Wu, Like and Liao, Wenjie and Fujimura, Shigeru},\n  booktitle={International Conference on Human-Computer Interaction},\n  pages={116--127},\n  year={2024},\n  organization={Springer Nature Switzerland Cham}\n}"
+            }
+        },
+        {
+            title: "A Novel Approach for Intelligent Fault Diagnosis in Bearing with Imbalanced Data Based on Cycle-Consistent GAN",
+            authors: "Wenjie Liao, Like Wu, Shihui Xu, and Shigeru Fujimura",
+            venue: "IEEE Transactions on Instrumentation and Measurement",
+            abstract: "This paper presents a novel approach for intelligent fault diagnosis in bearing systems using cycle-consistent GAN with imbalanced data.",
+            tags: ["Fault Diagnosis", "GAN", "Measurement"],
+            type: "journal-paper",
+            links: {
+                pdf: "",
+                doi: "https://doi.org/10.1109/TIM.2024.3427866",
+                bibtex: "@article{liao2024novel,\n  title={A novel approach for intelligent fault diagnosis in bearing with imbalanced data based on cycle-consistent GAN},\n  author={Liao, Wenjie and Wu, Like and Xu, Shihui and Fujimura, Shigeru},\n  journal={IEEE Transactions on Instrumentation and Measurement},\n  year={2024},\n  publisher={IEEE}\n}"
+            }
+        },
+        {
+            title: "Enhancing Collaborative Shopping Experience Through Interactive Personalized Avatars and Shared Gaze in a Multi-User Augmented Reality Environment",
+            authors: "Shihui Xu, Like Wu, Wenjie Liao, and Shigeru Fujimura",
+            venue: "International Journal of Human--Computer Interaction",
+            abstract: "This paper explores the enhancement of collaborative shopping experiences using interactive personalized avatars and shared gaze in AR environments.",
+            tags: ["AR", "Collaborative Shopping", "Personalized Avatars"],
+            type: "journal-paper",
+            links: {
+                pdf: "/papers/Enhancing2024.pdf",
+                doi: "https://doi.org/10.1080/10447318.2024.2381923",
+                bibtex: "@article{xu2024enhancing,\n  title={Enhancing Collaborative Shopping Experience Through Interactive Personalized Avatars and Shared Gaze in a Multi-User Augmented Reality Environment},\n  author={Xu, Shihui and Wu, Like and Liao, Wenjie and Fujimura, Shigeru},\n  journal={International Journal of Human--Computer Interaction},\n  pages={1--22},\n  year={2024},\n  publisher={Taylor \\& Francis}\n}"
+            }
+        }
+    ],
+    "2021": [
+        {
+            title: "An Interactive AR-Based Virtual Try-On System Using Personalized Avatars: Augmented Walking and Social FitMe",
+            authors: "Yuhan Liu, Yuzhao Liu, Shihui Xu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "Technical Report",
+            abstract: "This paper presents an interactive AR-based virtual try-on system using personalized avatars.",
+            tags: ["AR", "Virtual Try-on", "Personalized Avatars"],
+            type: "technical-report",
+            links: {
+                pdf: "/papers/Aninteracitve2021.pdf",
+                doi: "",
+                bibtex: "@misc{liu2021interactive,\n  title={An interactive AR-based virtual try-on system using personalized avatars: Augmented walking and social fitme},\n  author={Liu, Yuhan and Liu, Yuzhao and Xu, Shihui and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  year={2021}\n}"
+            }
+        }
+    ],
+    "2020": [
+        {
+            title: "Augmented Reality Fashion Show Using Personalized 3D Human Models",
+            authors: "Shihui Xu, Jingyi Yuan, Xitong Sun, Yuhan Liu, Yuzhao Liu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "International Conference on Human-Computer Interaction",
+            abstract: "This paper presents an augmented reality fashion show system using personalized 3D human models.",
+            tags: ["AR", "Fashion Show", "3D Models"],
+            type: "conference-paper",
+            links: {
+                pdf: "/papers/Augmented2020.pdf",
+                doi: "https://doi.org/10.1007/978-3-030-50020-7_31",
+                bibtex: "@inproceedings{xu2020augmented,\n  title={Augmented reality fashion show using personalized 3D human models},\n  author={Xu, Shihui and Yuan, Jingyi and Sun, Xitong and Liu, Yuhan and Liu, Yuzhao and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  booktitle={International Conference on Human-Computer Interaction},\n  pages={435--450},\n  year={2020},\n  organization={Springer International Publishing Cham}\n}"
+            }
+        },
+        {
+            title: "Comparing VR- and AR-Based Try-On Systems Using Personalized Avatars",
+            authors: "Yuzhao Liu, Yuhan Liu, Shihui Xu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "Electronics",
+            abstract: "This paper compares VR and AR-based try-on systems using personalized avatars.",
+            tags: ["VR", "AR", "Virtual Try-on"],
+            type: "journal-paper",
+            links: {
+                pdf: "/papers/Comparing2020.pdf",
+                doi: "https://doi.org/10.3390/electronics9111814",
+                bibtex: "@article{liu2020comparing,\n  title={Comparing VR-and AR-based try-on systems using personalized avatars},\n  author={Liu, Yuzhao and Liu, Yuhan and Xu, Shihui and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  journal={Electronics},\n  volume={9},\n  number={11},\n  pages={1814},\n  year={2020},\n  publisher={MDPI}\n}"
+            }
+        },
+        {
+            title: "3D Virtual Try-On System Using Personalized Avatars: Augmented Walking in the Real World",
+            authors: "Yuhan Liu, Yuzhao Liu, Shihui Xu, Jingyi Yuan, Xitong Sun, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)",
+            abstract: "This paper presents a 3D virtual try-on system using personalized avatars with augmented walking in the real world.",
+            tags: ["AR", "Virtual Try-on", "3D Avatars"],
+            type: "conference-paper",
+            links: {
+                pdf: "",
+                doi: "",
+                bibtex: "@inproceedings{liu20203d,\n  title={3D virtual try-on system using personalized avatars: Augmented walking in the real world},\n  author={Liu, Yuhan and Liu, Yuzhao and Xu, Shihui and Yuan, Jingyi and Sun, Xitong and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  booktitle={Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)},\n  pages={391--398},\n  year={2020}\n}"
+            }
+        },
+        {
+            title: "Rethinking the Fashion Show: A Personal Daily Life Show Using Augmented Reality",
+            authors: "Shihui Xu, Yuhan Liu, Yuzhao Liu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)",
+            abstract: "This paper presents a novel approach to fashion shows using augmented reality technology, transforming traditional fashion presentations into personalized daily life experiences.",
+            tags: ["AR", "Fashion Show", "Personalization"],
+            type: "conference-paper",
+            links: {
+                pdf: "/papers/Rethinking2020.pdf",
+                doi: "#",
+                bibtex: "@inproceedings{xu2020rethinking,\n  title={Rethinking the Fashion Show: A Personal Daily Life Show Using Augmented Reality},\n  author={Xu, Shihui and Liu, Yuhan and Liu, Yuzhao and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  year={2020},\n  month={11},\n  booktitle={Proceedings of the Thirteenth International Conference on Advances in Computer-Human Interactions (ACHI 2020)}\n}"
+            }
+        }
+    ],
+    "2019": [
+        {
+            title: "Sharing Augmented Reality Experience Between HMD and Non-HMD User",
+            authors: "Shihui Xu, Bo Yang, Boyang Liu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            venue: "Human Interface and the Management of Information. Information in Intelligent Systems: Thematic Area, HIMI 2019",
+            abstract: "This paper explores the sharing of augmented reality experiences between HMD and non-HMD users.",
+            tags: ["AR", "HMD", "Collaborative Experience"],
+            type: "conference-paper",
+            links: {
+                pdf: "/papers/Sharing2019.pdf",
+                doi: "https://doi.org/10.1007/978-3-030-22646-6_14",
+                bibtex: "@inproceedings{xu2019sharing,\n  title={Sharing augmented reality experience between hmd and non-hmd user},\n  author={Xu, Shihui and Yang, Bo and Liu, Boyang and Cheng, Kelvin and Masuko, Soh and Tanaka, Jiro},\n  booktitle={Human Interface and the Management of Information. Information in Intelligent Systems: Thematic Area, HIMI 2019, Held as Part of the 21st HCI International Conference, HCII 2019, Orlando, FL, USA, July 26-31, 2019, Proceedings, Part II 21},\n  pages={187--202},\n  year={2019},\n  organization={Springer International Publishing}\n}"
+            }
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <section class="publications-header">
+        <div class="container">
+            <h1 class="page-title">Publications</h1>
+            <p class="page-description">Exploring the intersection of human needs and technological capabilities through rigorous research and thoughtful design.</p>
+        </div>
+    </section>
+    
+    <section class="publications-content">
+        <div class="container">
+            <div class="publications-controls">
+                <div class="filter-controls">
+                    <button class="filter-btn active">All</button>
+                    <button class="filter-btn">Journal</button>
+                    <button class="filter-btn">Conference</button>
+                    <button class="filter-btn">Workshop/Poster</button>
+                    <button class="filter-btn">Book Chapter</button>
+                </div>
+                
+                <div class="search-box">
+                    <span class="search-icon">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </span>
+                    <input type="text" class="search-input" placeholder="Search publications...">
+                </div>
+            </div>
+            
+            {Object.entries(publicationsByYear)
+                .sort(([yearA], [yearB]) => Number(yearB) - Number(yearA))
+                .map(([year, publications]) => (
+                <>
+                    <div class="year-divider">
+                        <h3 class="year-label">{year}</h3>
+                        <div class="year-line"></div>
+                    </div>
+                    
+                    <div class="publication-grid">
+                        {publications.map(pub => (
+                            <div class={`publication-card ${pub.type}`}>
+                                {pub.image && (
+                                    <div class="publication-image">
+                                        <img src={pub.image} alt={pub.title}>
+                                    </div>
+                                )}
+                                <div class="publication-content">
+                                    <h3 class="publication-title">{pub.title}</h3>
+                                    <p class="publication-authors" set:html={pub.authors.replace('Your Name', '<span class="author-highlight">Your Name</span>')}></p>
+                                    <p class="publication-venue">{pub.venue}</p>
+                                    <p class="publication-abstract">{pub.abstract}</p>
+                                    <div class="publication-tags">
+                                        {pub.tags.map(tag => (
+                                            <span class="publication-tag">{tag}</span>
+                                        ))}
+                                    </div>
+                                    <div class="publication-links">
+                                        {Object.entries(pub.links).map(([key, url]) => (
+                                            key === 'bibtex' ? (
+                                                <button class="publication-link" onclick={`navigator.clipboard.writeText(\`${url}\`); alert('BibTeX copied to clipboard!')`}>
+                                                    {key.charAt(0).toUpperCase() + key.slice(1)}
+                                                </button>
+                                            ) : (
+                                                <a href={url} class="publication-link" target={key === 'doi' ? '_blank' : '_self'}>
+                                                    {key === 'doi' ? 'DOI' : key.charAt(0).toUpperCase() + key.slice(1)}
+                                                </a>
+                                            )
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </>
+            ))}
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    /* 出版物页面样式 */
+    .publications-header {
+        padding: 3rem 0 2rem;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-bottom: 1.5rem;
+        font-weight: 400;
+    }
+    
+    .page-description {
+        max-width: 700px;
+        color: var(--color-text-light);
+        font-size: 1.1rem;
+    }
+    
+    .publications-content {
+        padding: 3rem 0;
+    }
+    
+    .publications-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 3rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .filter-controls {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+        background: none;
+        border: 1px solid var(--color-border);
+        padding: 0.5rem 1rem;
+        border-radius: 2px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.2s ease;
+        color: var(--color-text-light);
+    }
+    
+    .filter-btn.active, .filter-btn:hover {
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        border-color: var(--color-primary-light);
+    }
+    
+    .search-box {
+        position: relative;
+    }
+    
+    .search-icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--color-text-light);
+    }
+    
+    .search-input {
+        padding: 0.5rem 0.75rem 0.5rem 2rem;
+        border: 1px solid var(--color-border);
+        border-radius: 2px;
+        font-size: 0.9rem;
+        width: 250px;
+        transition: all 0.2s ease;
+        background-color: var(--color-background);
+        color: var(--color-text);
+    }
+    
+    .search-input:focus {
+        outline: none;
+        border-color: var(--color-primary);
+        box-shadow: 0 0 0 2px rgba(200, 121, 65, 0.1);
+    }
+    
+    .highlighted-publications {
+        margin-bottom: 4rem;
+    }
+    
+    .publication-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin-bottom: 4rem;
+    }
+    
+    .publication-card {
+        background-color: var(--color-background);
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow-sm);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 1px solid var(--color-border);
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .publication-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow);
+    }
+    
+    .publication-image {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .publication-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .publication-card:hover .publication-image img {
+        transform: scale(1.03);
+    }
+    
+    .publication-content {
+        padding: 1.5rem;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .publication-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+        font-weight: 500;
+        color: var(--color-text);
+        line-height: 1.4;
+    }
+    
+    .publication-authors {
+        margin-bottom: 0.5rem;
+        color: var(--color-text-light);
+    }
+    
+    .author-highlight {
+        font-weight: 600;
+        color: var(--color-primary);
+    }
+    
+    .publication-venue {
+        font-style: italic;
+        margin-bottom: 1rem;
+        color: var(--color-text-light);
+    }
+    
+    .publication-abstract {
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+        color: var(--color-text);
+    }
+    
+    .publication-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .publication-tag {
+        background-color: var(--color-primary-light);
+        color: var(--color-primary);
+        padding: 0.2rem 0.65rem;
+        border-radius: 2px;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .publication-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: auto;
+    }
+    
+    .publication-link {
+        color: var(--color-primary);
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+    }
+    
+    .publication-link:hover {
+        color: var(--color-accent);
+        text-decoration: underline;
+    }
+    
+    .year-divider {
+        display: flex;
+        align-items: center;
+        margin: 3rem 0 2rem;
+    }
+    
+    .year-label {
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: var(--color-text);
+        margin-right: 1rem;
+        font-family: var(--font-serif);
+    }
+    
+    .year-line {
+        flex-grow: 1;
+        height: 1px;
+        background-color: var(--color-border);
+    }
+    
+    @media (max-width: 768px) {
+        .publications-controls {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .search-box {
+            width: 100%;
+        }
+        
+        .search-input {
+            width: 100%;
+        }
+    }
+</style>
+
+<script>
+    // 客户端JavaScript，用于处理筛选功能
+    document.addEventListener('DOMContentLoaded', () => {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const searchInput = document.querySelector('.search-input') as HTMLInputElement;
+        const publicationCards = document.querySelectorAll('.publication-card') as NodeListOf<HTMLElement>;
+        
+        // 筛选按钮点击事件
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // 移除所有按钮的active类
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // 为当前点击的按钮添加active类
+                button.classList.add('active');
+                
+                const filter = button.textContent?.toLowerCase() ?? 'all';
+                
+                // 显示或隐藏出版物卡片
+                publicationCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                    } else {
+                        const cardType = card.classList.contains('conference-paper') ? 'conference' :
+                                       card.classList.contains('journal-paper') ? 'journal' :
+                                       card.classList.contains('workshop-paper') ? 'workshop/poster' :
+                                       card.classList.contains('poster-paper') ? 'workshop/poster' :
+                                       card.classList.contains('book-chapter') ? 'book chapter' : '';
+                        
+                        if (cardType === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    }
+                });
+            });
+        });
+        
+        // 搜索框输入事件
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                
+                publicationCards.forEach(card => {
+                    const titleElement = card.querySelector('.publication-title');
+                    const abstractElement = card.querySelector('.publication-abstract');
+                    const authorsElement = card.querySelector('.publication-authors');
+                    
+                    const title = titleElement?.textContent?.toLowerCase() ?? '';
+                    const abstract = abstractElement?.textContent?.toLowerCase() ?? '';
+                    const authors = authorsElement?.textContent?.toLowerCase() ?? '';
+                    
+                    if (title.includes(searchTerm) || abstract.includes(searchTerm) || authors.includes(searchTerm)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        }
+    });
+</script> 

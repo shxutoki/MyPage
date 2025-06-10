@@ -1,0 +1,468 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Sharing AR Experience Between HMD and Non-HMD Users - Research Project";
+const metaDescription = "Research on investigating methods to bridge the gap between HMD and non-HMD users in AR environments.";
+
+// 项目信息
+const project = {
+    title: "Sharing AR Experience Between HMD and Non-HMD Users",
+    featuredImage: "/images/sharing-ar-experience-page/featured-image.png",
+    description: "This research explores methods to create shared augmented reality experiences between users wearing head-mounted displays (HMD) and those without HMDs, enabling collaborative interactions across different AR access methods.",
+    dateStart: "2018-05",
+    dateEnd: "2019-06",
+    funding: "",
+    collaborators: [
+        {
+            name: "Shihui Xu",
+            role: "Lead Author & Graduate Student",
+            affiliation: "Waseda University",
+            email: "shxu@toki.waseda.jp",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Bo Yang",
+            role: "Graduate Student",
+            affiliation: "Waseda University",
+            email: "kuroiiimizu@akane.waseda.jp",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Boyang Liu",
+            role: "Graduate Student",
+            affiliation: "Waseda University",
+            email: "waseda-liuboyang@moegi.waseda.jp",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Kelvin Cheng",
+            role: "Researcher",
+            affiliation: "Rakuten Institute of Technology",
+            email: "kelvin.cheng@rakuten.com",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Soh Masuko",
+            role: "Researcher",
+            affiliation: "Rakuten Institute of Technology",
+            email: "so.masuko@rakuten.com",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Jiro Tanaka",
+            role: "Supervisor",
+            affiliation: "Waseda University",
+            email: "jiro@aoni.waseda.jp",
+            avatar: "/avatars/Avatar.svg"
+        }
+    ],
+    relatedPublications: [
+        {
+            title: "Sharing Augmented Reality Experience Between HMD and Non-HMD User",
+            venue: "Human Interface and the Management of Information. Information in Intelligent Systems: Thematic Area, HIMI 2019",
+            authors: "Shihui Xu, Bo Yang, Boyang Liu, Kelvin Cheng, Soh Masuko, and Jiro Tanaka",
+            link: "/publications#himi2019"
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <div class="container project-container">
+        <div class="project-header">
+            <h1 class="project-title">{project.title}</h1>
+            <div class="project-meta">
+                <span class="project-date">{project.dateStart} – {project.dateEnd}</span>
+                <span class="project-funding">{project.funding}</span>
+            </div>
+        </div>
+        
+        <div class="project-featured-image">
+            <img src={project.featuredImage} alt={project.title}>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-main">
+                <h2>Overview</h2>
+                <p>This research addresses a critical gap in current augmented reality (AR) systems, which primarily focus on enhancing experiences for head-mounted display (HMD) users while excluding bystanders without HMDs. We propose an innovative solution that enables the sharing of AR experiences between HMD and non-HMD users through smartphone visualization and synchronization of virtual objects.</p>
+                
+                <p>Our system allows non-HMD users to directly view and interact with virtual objects on their smartphones, creating a more inclusive AR experience. This approach is particularly valuable in e-commerce contexts, where it enables both HMD users to interact with virtual products for better real product understanding, while non-HMD users can have similar AR experiences through their smartphones.</p>
+                
+                <h2>Research Objectives</h2>
+                <ul>
+                    <li>Enable HMD users to share augmented reality information with non-HMD users</li>
+                    <li>Allow non-HMD users to interact with the same virtual objects as HMD users</li>
+                    <li>Create a synchronized viewing experience between HMD and smartphone displays</li>
+                    <li>Facilitate social media sharing of AR experiences through video rendering</li>
+                </ul>
+                
+                <h2>Methodology</h2>
+                <p>Our research employs a comprehensive approach:</p>
+                <ol>
+                    <li>User studies with mixed groups of HMD and non-HMD users</li>
+                    <li>Development of shared interaction techniques</li>
+                    <li>Prototype testing and iterative refinement</li>
+                    <li>Evaluation of collaboration effectiveness</li>
+                </ol>
+                
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Smartphone-based visualization of virtual objects for non-HMD users</li>
+                    <li>Real-time synchronization of HMD user's view to smartphone displays</li>
+                    <li>Direct interaction capabilities for non-HMD users through smartphones</li>
+                    <li>Social media sharing functionality for AR experiences</li>
+                    <li>Enhanced e-commerce experience through virtual product interaction</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <p>The system incorporates several key technologies:</p>
+                <ul>
+                    <li>See-through type AR head-mounted displays for immersive experiences</li>
+                    <li>Smartphone-based AR visualization and interaction</li>
+                    <li>Real-time view synchronization between HMD and smartphone</li>
+                    <li>Video rendering capabilities for social media sharing</li>
+                </ul>
+
+                <h2>Demo Video</h2>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/VNsWWdrqrKA"
+                        title="Sharing AR Experience Demo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <h2>Future Directions</h2>
+                <p>Future work will focus on:</p>
+                <ul>
+                    <li>Enhanced cross-platform interaction methods</li>
+                    <li>Improved spatial awareness sharing</li>
+                    <li>Advanced collaboration features</li>
+                    <li>Integration with existing AR platforms</li>
+                </ul>
+            </div>
+            
+            <div class="project-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Team Members</h3>
+                    <div class="team-members">
+                        {project.collaborators.map(member => (
+                            <div class="team-member">
+                                <img src={member.avatar} alt={member.name} class="member-avatar">
+                                <div class="member-info">
+                                    <div class="member-name">{member.name}</div>
+                                    <div class="member-role">{member.role}, {member.affiliation}</div>
+                                    <div class="member-email">{member.email}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Related Publications</h3>
+                    <ul class="related-publications">
+                        {project.relatedPublications.map(pub => (
+                            <li>
+                                <a href={pub.link}>{pub.title}</a>
+                                <span class="publication-venue">{pub.venue}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+    .project-container {
+        padding: 2rem 0 4rem;
+    }
+    
+    .project-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-family: var(--font-serif);
+        color: var(--color-text);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        color: var(--color-text-light);
+    }
+    
+    .project-featured-image {
+        margin-bottom: 2.5rem;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .project-featured-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .project-video {
+        margin: 2.5rem 0;
+        text-align: center;
+    }
+    
+    .project-video h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 宽高比 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin: 1.5rem auto;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .project-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .project-main h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        color: var(--color-text);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-main h2:first-child {
+        margin-top: 0;
+    }
+    
+    .project-main p, 
+    .project-main ul, 
+    .project-main ol {
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .project-main ul, 
+    .project-main ol {
+        padding-left: 1.5rem;
+    }
+    
+    .project-main li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-main strong {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+    
+    .project-sidebar {
+        position: sticky;
+        top: 6rem;
+        align-self: start;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 2.5rem;
+        background-color: var(--color-background);
+        border-radius: 5px;
+        padding: 1.5rem;
+        border: 1px solid var(--color-border);
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+        color: var(--color-text);
+    }
+    
+    .sidebar-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .team-member {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .member-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-primary-light);
+    }
+    
+    .member-info {
+        flex-grow: 1;
+    }
+    
+    .member-name {
+        font-weight: 500;
+        color: var(--color-text);
+    }
+    
+    .member-role {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    
+    .member-email {
+        font-size: 0.85rem;
+        color: var(--color-text-light);
+        margin-top: 0.25rem;
+    }
+    
+    .related-publications li {
+        margin-bottom: 1rem;
+    }
+    
+    .related-publications a {
+        display: block;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+    
+    .related-publications a:hover {
+        color: var(--color-accent);
+    }
+    
+    .publication-venue {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+    
+    .publication-authors {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        margin: 0.25rem 0;
+    }
+    
+    .cta-section {
+        margin-top: 4rem;
+        background-color: var(--color-accent-light);
+        border-radius: 5px;
+        padding: 2rem;
+        text-align: center;
+        border: 1px solid var(--color-border);
+    }
+    
+    .cta-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+        font-family: var(--font-serif);
+        color: var(--color-text);
+    }
+    
+    .cta-text {
+        max-width: 600px;
+        margin: 0 auto 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 2px;
+        font-weight: 400;
+        transition: all 0.2s;
+        letter-spacing: 0.5px;
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary {
+        background-color: var(--color-primary);
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: var(--color-accent);
+        color: white;
+    }
+    
+    @media (max-width: 768px) {
+        .project-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-sidebar {
+            position: static;
+            margin-top: 2rem;
+        }
+        
+        .video-container {
+            max-width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+</style> 

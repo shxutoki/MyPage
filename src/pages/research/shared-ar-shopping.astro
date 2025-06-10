@@ -1,0 +1,426 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Adaptive Interface Personalization - Research Project";
+const metaDescription = "Research on creating interfaces that intelligently adapt to individual user needs and preferences.";
+
+// 项目信息
+const project = {
+    title: "Shared AR Shopping Experience",
+    featuredImage: "/images/shared-ar-shopping-page/featured-image.png",
+    description: "Creating shared AR shopping experience that enables users to shop together in a shared AR space. Users can have their own personalized avatars. We build communication cues including gestures, voice, and shared gazes to enable users to communicate with each other.",
+    dateStart: "2022-09",
+    dateEnd: "2024-03",
+    funding: "",
+    collaborators: [
+        {
+            name: "Shihui Xu",
+            role: "Co-Principal Investigator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Like Wu",
+            role: "Research Collaborator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Wenjie Liao",
+            role: "Research Collaborator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Shigeru Fujimura",
+            role: "Supervisor",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        }
+    ],
+    relatedPublications: [
+        {
+            title: "Enhancing Collaborative Shopping Experience Through Interactive Personalized Avatars and Shared Gaze in a Multi-User Augmented Reality Environment",
+            venue: "International Journal of Human--Computer Interaction",
+            link: "/publications#ijhci2024"
+        },
+        {
+            title: "An Interactive AR-Based Virtual Try-On System Using Personalized Avatars: Augmented Walking and Social FitMe",
+            venue: "International Journal on Advances in Systems and Measurements, vol 14 no 1 & 2, 2021",
+            link: "/publications#ijasm2021"
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <div class="container project-container">
+        <div class="project-header">
+            <h1 class="project-title">{project.title}</h1>
+            <div class="project-meta">
+                <span class="project-date">{project.dateStart} – {project.dateEnd}</span>
+                <span class="project-funding">{project.funding}</span>
+            </div>
+        </div>
+        
+        <div class="project-featured-image">
+            <img src={project.featuredImage} alt={project.title}>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-main">
+                <h2>Overview</h2>
+                <p>This research explores how to enhance collaborative shopping experiences in multi-user AR environments. With the development of e-commerce, retailers have been exploring new ways to enhance the shopping experience for their customers, and Augmented Reality (AR) or Mixed Reality (MR) has emerged as a promising solution. However, existing AR shopping systems mainly focus on solo user experiences, lacking multi-user experiences. To address this gap, we propose a novel approach to collaborative shopping in a multi-user AR environment.</p>
+                
+                <p>Our research focuses on the following aspects:</p>
+                
+                <ul>
+                    <li><strong>Interactive Personalized Avatars</strong>: Exploring how interactive personalized avatars enhance users' shopping experience and social connections</li>
+                    <li><strong>Shared Gaze Cues</strong>: Investigating how shared gaze cues facilitate communication and collaboration between shopping companions</li>
+                    <li><strong>Multi-user AR Environment</strong>: Developing AR systems that support simultaneous shopping for multiple users, creating more authentic social shopping experiences</li>
+                    <li><strong>User Experience Evaluation</strong>: Assessing the impact of these technologies on user perception through quantitative and qualitative research</li>
+                </ul>
+                
+                <h2>Methodology</h2>
+                <p>Our research employs a mixed-methods approach combining quantitative experimentation with qualitative analysis:</p>
+                
+                <ol>
+                    <li><strong>Experimental Design:</strong> A 2 (personalized avatar: static vs. interactive) × 2 (shared gaze: without vs. with) within-subject repeated measures design</li>
+                    <li><strong>User Study:</strong> Recruited thirty participants to evaluate the impact of different feature combinations on user experience</li>
+                    <li><strong>Data Collection:</strong> Collected quantitative data through questionnaires to assess users' perceptions of enjoyment, usefulness, communication, co-presence, and future use intention</li>
+                    <li><strong>Qualitative Analysis:</strong> Gained deeper insights into how these technologies affect shopping experience and efficiency through user feedback and observations</li>
+                </ol>
+                
+                <h2>Results</h2>
+                <p>Our research demonstrates significant findings regarding the impact of interactive personalized avatars and shared gaze cues on collaborative shopping experiences in AR environments. The results of our user study revealed several key insights:</p>
+                
+                <h3>Impact of Interactive Personalized Avatars</h3>
+                <p>Interactive personalized avatars significantly enhanced users' perception across multiple dimensions:</p>
+                <ul>
+                    <li>Improved user enjoyment and usefulness of the shopping experience</li>
+                    <li>Enhanced communication between shopping companions</li>
+                    <li>Increased sense of co-presence in the virtual environment</li>
+                    <li>Higher intention for future use of the system</li>
+                </ul>
+                
+                <p>The interactive nature of personalized avatars allowed users to:</p>
+                <ul>
+                    <li>Dynamically preview clothing try-on effects</li>
+                    <li>Interact with the real environment from different angles</li>
+                    <li>Express emotions and preferences to shopping companions</li>
+                    <li>Receive more accurate visual feedback based on their body shape and appearance</li>
+                </ul>
+                
+                <h3>Effectiveness of Shared Gaze Cues</h3>
+                <p>The implementation of shared gaze features proved particularly valuable in:</p>
+                <ul>
+                    <li>Enhancing interpersonal interactions between shopping companions</li>
+                    <li>Facilitating understanding of others' interests and preferences</li>
+                    <li>Improving navigation in complex shopping environments</li>
+                    <li>Creating a more engaging and novel shopping experience</li>
+                </ul>
+                
+                <h3>Combined Impact</h3>
+                <p>The combination of interactive personalized avatars and shared gaze cues showed synergistic effects:</p>
+                <ul>
+                    <li>Further enhanced perceived communication between users</li>
+                    <li>Strengthened the sense of co-presence in the virtual environment</li>
+                    <li>Created a more immersive and socially connected shopping experience</li>
+                </ul>
+                
+                <h3>Practical Implications</h3>
+                <p>Our findings have important implications for:</p>
+                <ul>
+                    <li><strong>Designers:</strong> Opportunities to create more engaging and intuitive shopping interfaces</li>
+                    <li><strong>Developers:</strong> Need to consider varying levels of user familiarity with AR technology</li>
+                    <li><strong>Marketers:</strong> Potential for innovative campaigns leveraging social shopping experiences</li>
+                </ul>
+                
+                <h2>Demo Video</h2>
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/wrMuyrzcHFs"
+                        title="Shared AR Shopping Demo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+                <h2>Future Directions</h2>
+                <p>As this research progresses, we plan to explore:</p>
+                
+                <ul>
+                    <li>Integration of multimodal sensing to better understand user context</li>
+                    <li>Cross-cultural aspects of interface adaptation preferences</li>
+                    <li>Applications in assistive technology to support users with varying abilities</li>
+                    <li>Development of open-source tools to help designers implement adaptive interfaces</li>
+                </ul>
+            </div>
+            
+            <div class="project-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Team Members</h3>
+                    <div class="team-members">
+                        {project.collaborators.map(member => (
+                            <div class="team-member">
+                                <img src={member.avatar} alt={member.name} class="member-avatar">
+                                <div class="member-info">
+                                    <div class="member-name">{member.name}</div>
+                                    <div class="member-role">{member.role}, {member.affiliation}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Related Publications</h3>
+                    <ul class="related-publications">
+                        {project.relatedPublications.map(pub => (
+                            <li>
+                                <a href={pub.link}>{pub.title}</a>
+                                <span class="publication-venue">{pub.venue}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+    .project-container {
+        padding: 2rem 0 4rem;
+    }
+    
+    .project-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-family: var(--font-serif);
+        color: var(--color-text);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        color: var(--color-text-light);
+    }
+    
+    .project-featured-image {
+        margin-bottom: 2.5rem;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .project-featured-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .project-video {
+        margin: 2.5rem 0;
+        text-align: center;
+    }
+    
+    .project-video h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%; /* 16:9 宽高比 */
+        height: 0;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin: 1.5rem auto;
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .project-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .project-main h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        color: var(--color-text);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-main h2:first-child {
+        margin-top: 0;
+    }
+    
+    .project-main p, 
+    .project-main ul, 
+    .project-main ol {
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .project-main ul, 
+    .project-main ol {
+        padding-left: 1.5rem;
+    }
+    
+    .project-main li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-main strong {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+    
+    .project-sidebar {
+        position: sticky;
+        top: 6rem;
+        align-self: start;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 2.5rem;
+        background-color: var(--color-background);
+        border-radius: 5px;
+        padding: 1.5rem;
+        border: 1px solid var(--color-border);
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+        color: var(--color-text);
+    }
+    
+    .sidebar-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .team-member {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .member-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-primary-light);
+    }
+    
+    .member-info {
+        flex-grow: 1;
+    }
+    
+    .member-name {
+        font-weight: 500;
+        color: var(--color-text);
+    }
+    
+    .member-role {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    
+    .related-publications li {
+        margin-bottom: 1rem;
+    }
+    
+    .related-publications a {
+        display: block;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+    
+    .related-publications a:hover {
+        color: var(--color-accent);
+    }
+    
+    .publication-venue {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+    
+    @media (max-width: 768px) {
+        .project-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-sidebar {
+            position: static;
+            margin-top: 2rem;
+        }
+        
+        .video-container {
+            max-width: 100%;
+            aspect-ratio: 16/9;
+        }
+    }
+</style> 

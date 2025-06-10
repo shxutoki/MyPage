@@ -1,0 +1,296 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+
+const title = "About Shihui Xu - Academic Researcher";
+const metaDescription = "Learn more about Shihui Xu, researcher in Human-Computer Interaction, Augmented Reality and Virtual Reality.";
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <section class="about-header">
+        <div class="container">
+            <h1 class="page-title">About Me</h1>
+        </div>
+    </section>
+    
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Research Focus</h2>
+                    <p>
+                        My research explores the frontiers of human-computer interaction, with a particular focus on how augmented reality (AR) 
+                        and virtual reality (VR) technologies are transforming the way people collaborate and interact. By combining cognitive 
+                        psychology, machine learning, and design thinking, I strive to create more natural and intuitive digital experiences.
+                    </p>
+                    <p>
+                        Currently, my research focuses on three main directions:
+                    </p>
+                    <ul>
+                        <li>
+                            <strong>Enhanced Remote Collaboration:</strong> Developing remote collaboration systems based on drone and mixed 
+                            reality technologies to make remote work more natural and efficient.
+                        </li>
+                        <li>
+                            <strong>Personalized AR Experiences:</strong> Investigating how innovative technologies like personalized avatars 
+                            and shared gaze can enhance social presence and collaborative experiences in AR environments.
+                        </li>
+                        <li>
+                            <strong>Cross-Device Interaction:</strong> Exploring AR experience sharing between users with different devices 
+                            (such as HMD and non-HMD users) to enable broader collaboration possibilities.
+                        </li>
+                    </ul>
+                    <p>
+                        My research goal is to make digital interactions more natural and intuitive through technological innovation, 
+                        ultimately enhancing people's work and life quality.
+                    </p>
+                    
+                    <h2>Background</h2>
+                    <p>
+                        I am currently a Ph.D. student in Human-Computer Interaction at Waseda University, where I worked with the Smart Industry 
+                        Lab. Prior to that, I completed my M.S. at Waseda University in Human-Computer Interaction with the Interactive Programming Lab, and my undergraduate studies at Southeast University in 
+                        Electronics Engineering.
+                    </p>
+                    <p>
+                        My interdisciplinary approach draws from cognitive psychology, machine learning, and design thinking to create 
+                        intuitive and empathetic digital experiences.
+                    </p>
+                    
+                    
+                    <h2>Hobbies</h2>
+                    <p>
+                        When I'm not working, I enjoy spending my time crocheting and knitting. This creative hobby allows me to 
+                        relax, express my artistic side, and create beautiful handmade items that bring joy to both myself and others.
+                    </p>
+                    
+                    <div class="hobby-gallery">
+                        <div class="gallery-item">
+                            <img src="/images/Hobbies/crochet1.jpg" alt="Crochet bag 1" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="/images/Hobbies/crochet2.jpg" alt="Crochet hat 1" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="/images/Hobbies/crochet3.jpg" alt="Crochet hat 2" class="gallery-image">
+                        </div>
+                        <div class="gallery-item">
+                            <img src="/images/Hobbies/crochet4.jpg" alt="Crochet bag 2" class="gallery-image">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-sidebar">
+                    <div class="profile-card">
+                        <img src="/profile.jpg" alt="Shihui Xu" class="profile-image">
+                        <div class="profile-info">
+                            <h3>Shihui Xu</h3>
+                            <p>PhD student in Information, Production and Systems Engineering</p>
+                            <p>Waseda University</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <h3>Contact</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <strong>Email:</strong>
+                                <a href="mailto:shxu@toki.waseda.jp">shxu@toki.waseda.jp</a>
+                            </li>
+                            <li>
+                                <strong>Address:</strong>
+                                Shioya 4 chome, Wakamatsu Ward, Kitakyushu City,Fukuoka, Japan
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</MainLayout>
+
+<style>
+    .about-header {
+        padding: 3rem 0 2rem;
+        background-color: var(--color-background);
+        border-bottom: 1px solid var(--color-border);
+    }
+    
+    .page-title {
+        font-size: 2.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-bottom: 1.5rem;
+    }
+    
+    .about-content {
+        padding: 3rem 0;
+    }
+    
+    .about-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .about-text h2 {
+        font-size: 1.5rem;
+        color: var(--color-text);
+        font-family: var(--font-serif);
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    
+    .about-text h2:first-child {
+        margin-top: 0;
+    }
+    
+    .about-text p {
+        margin-bottom: 1rem;
+        color: var(--color-text);
+        line-height: 1.6;
+    }
+    
+    .about-text ul {
+        padding-left: 1.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .about-text li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .profile-card {
+        background-color: var(--color-primary-light);
+        border-radius: 5px;
+        overflow: hidden;
+        margin-bottom: 2rem;
+    }
+    
+    .profile-image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+    }
+    
+    .profile-info {
+        padding: 1.5rem;
+    }
+    
+    .profile-info h3 {
+        font-size: 1.25rem;
+        color: var(--color-text);
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+    }
+    
+    .profile-info p {
+        margin-bottom: 0.25rem;
+        color: var(--color-text-light);
+    }
+    
+    .contact-card {
+        background-color: white;
+        border-radius: 5px;
+        padding: 1.5rem;
+        border: 1px solid var(--color-border);
+    }
+    
+    .contact-card h3 {
+        font-size: 1.25rem;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+        font-weight: 500;
+    }
+    
+    .contact-list {
+        list-style: none;
+        padding: 0;
+    }
+    
+    .contact-list li {
+        margin-bottom: 1rem;
+        color: var(--color-text);
+    }
+    
+    .contact-list a {
+        color: var(--color-primary);
+    }
+    
+    .contact-list a:hover {
+        color: var(--color-accent);
+    }
+    
+    .hobby-gallery {
+        display: flex;
+        gap: 1.5rem;
+        margin-top: 2rem;
+        overflow-x: auto;
+        padding-bottom: 1rem;
+        scrollbar-width: thin;
+        scrollbar-color: var(--color-primary) var(--color-background);
+    }
+
+    .hobby-gallery::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    .hobby-gallery::-webkit-scrollbar-track {
+        background: var(--color-background);
+        border-radius: 4px;
+    }
+
+    .hobby-gallery::-webkit-scrollbar-thumb {
+        background-color: var(--color-primary);
+        border-radius: 4px;
+    }
+
+    .gallery-item {
+        flex: 0 0 250px;
+        background-color: var(--color-background);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .gallery-image:hover {
+        transform: scale(1.05);
+    }
+
+    .gallery-caption {
+        padding: 0.75rem;
+        text-align: center;
+        color: var(--color-text);
+        font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+        .about-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .about-sidebar {
+            order: -1;
+        }
+        
+        .profile-card {
+            max-width: 350px;
+            margin: 0 auto 2rem;
+        }
+        
+        .hobby-gallery {
+            gap: 1rem;
+        }
+        
+        .gallery-item {
+            flex: 0 0 200px;
+        }
+    }
+</style> 

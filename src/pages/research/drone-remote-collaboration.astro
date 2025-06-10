@@ -1,0 +1,389 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+
+const title = "Drone-enhanced MR Remote Collaboration - Research Project";
+const metaDescription = "Research on creating interfaces that intelligently adapt to individual user needs and preferences.";
+
+// 项目信息
+const project = {
+    title: "Drone-enhanced MR Remote Collaboration",
+    featuredImage: "/images/drone-remote-collaboration-page/featured-image.png",
+    description: "A novel Mixed Reality (MR) remote collaboration system that integrates a telepresence drone to overcome viewpoint limitations in traditional approaches, enabling more effective remote collaboration through independent spatial navigation.",
+    dateStart: "2024-01",
+    dateEnd: "Present",
+    funding: "",
+    collaborators: [
+        {
+            name: "Shihui Xu",
+            role: "Co-Principal Investigator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Like Wu",
+            role: "Research Collaborator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Wenjie Liao",
+            role: "Research Collaborator",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        },
+        {
+            name: "Shigeru Fujimura",
+            role: "Supervisor",
+            affiliation: "Waseda University",
+            avatar: "/avatars/Avatar.svg"
+        }
+    ],
+    relatedPublications: [
+        {
+            title: "Exploring Human Reactions to Telepresence Drones: A User Study on Safety and Trust Using a Simulated Drone in a VR Environment",
+            venue: "2025 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)",
+            link: "/publications#vrw2025"
+        },
+        {
+            title: "Enhancing Remote Collaboration Through Drone-Driven Agent and Mixed Reality",
+            venue: "26th International Conference on Human-Computer Interaction (HCII 2024)",
+            link: "/publications#hci2024"
+        }
+    ]
+};
+---
+
+<MainLayout title={title} metaDescription={metaDescription}>
+    <div class="container project-container">
+        <div class="project-header">
+            <h1 class="project-title">{project.title}</h1>
+            <div class="project-meta">
+                <span class="project-date">{project.dateStart} – {project.dateEnd}</span>
+                <span class="project-funding">{project.funding}</span>
+            </div>
+        </div>
+        
+        <div class="project-featured-image">
+            <img src={project.featuredImage} alt={project.title}>
+        </div>
+        
+        <div class="project-content">
+            <div class="project-main">
+                <h2>Overview</h2>
+                <p>This research presents a novel Mixed Reality (MR) remote collaboration system that integrates a telepresence drone to overcome viewpoint limitations in traditional approaches. Current MR systems typically restrict remote users to the local user's perspective or a fixed viewpoint, reducing spatial awareness and collaboration effectiveness.</p>
+                
+                <p>Our proposed system enables a remote user wearing a VR headset to independently navigate the local environment through a drone while guiding a local AR headset user. The drone embodies the remote user physically and virtually with an AR avatar. The system provides the remote user with a 3D reconstruction of the local environment, the local user's avatar, and real-time drone camera video to facilitate drone operation and collaboration.</p>
+                
+                <h2>Key Features</h2>
+                <ul>
+                    <li><strong>Independent Spatial Navigation:</strong> Remote users can freely explore the local environment through drone control</li>
+                    <li><strong>Embodied Communication:</strong> The drone serves as a physical proxy for the remote user with an AR avatar</li>
+                    <li><strong>Enhanced Spatial Awareness:</strong> 3D environment reconstruction and real-time video streaming</li>
+                    <li><strong>Intuitive Collaboration:</strong> Natural interaction between local and remote users through mixed reality interfaces</li>
+                </ul>
+                
+                <h2>Research Impact</h2>
+                <p>Our user study comparing the drone-enhanced MR system with traditional MR and 360-degree camera systems during inspection tasks revealed significant improvements:</p>
+                
+                <ul>
+                    <li>Enhanced collaboration efficiency through independent spatial navigation</li>
+                    <li>Improved social presence for both local and remote users</li>
+                    <li>Better spatial presence for remote users compared to traditional systems</li>
+                    <li>More effective task completion in inspection scenarios</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <p>The system consists of three core components:</p>
+                
+                <ol>
+                    <li><strong>AR HMD (Local User):</strong> Provides spatial awareness and renders the remote user's avatar</li>
+                    <li><strong>Telepresence Drone:</strong> Equipped with cameras for navigation and video streaming</li>
+                    <li><strong>VR HMD (Remote User):</strong> Enables environment exploration and drone control</li>
+                </ol>
+                
+                <h2>Methodology</h2>
+                <p>Our research employs a mixed-methods approach combining quantitative experimentation with qualitative insights:</p>
+                
+                <ol>
+                    <li><strong>System Development:</strong> Implementation of the drone-enhanced MR remote collaboration system with AR and VR interfaces</li>
+                    <li><strong>Comparative Study:</strong> Evaluation of our system against traditional MR and 360-degree camera approaches</li>
+                    <li><strong>Task Performance Analysis:</strong> Assessment of collaboration efficiency in inspection tasks</li>
+                    <li><strong>User Experience Evaluation:</strong> Measurement of social presence, spatial presence, and system usability</li>
+                </ol>
+                
+                <h2>Current Progress</h2>
+                <p>We have completed the following milestones in our research:</p>
+                
+                <ul>
+                    <li>Successfully developed and implemented the drone-enhanced MR remote collaboration system</li>
+                    <li>Conducted comprehensive user studies comparing our system with traditional approaches</li>
+                    <li>Analyzed and documented the experimental results demonstrating improved collaboration efficiency</li>
+                    <li>Completed a research paper and submitted it to an international journal for publication</li>
+                    <li>Identified key design guidelines for future drone-enhanced MR remote collaboration systems</li>
+                </ul>
+                
+                <h2>Future Directions</h2>
+                <p>Based on our findings, we plan to explore several promising directions:</p>
+                
+                <ul>
+                    <li>Integration of advanced computer vision techniques for more accurate environment reconstruction</li>
+                    <li>Development of semi-autonomous drone behaviors to reduce remote user workload</li>
+                    <li>Exploration of multi-drone scenarios for complex collaborative tasks</li>
+                    <li>Investigation of long-term usage patterns and adaptation strategies</li>
+                    <li>Application of the system in various domains such as industrial inspection, maintenance, and training</li>
+                </ul>
+
+                <div class="video-container">
+                    <iframe 
+                        src="https://www.youtube.com/embed/yohV-IvWXZA"
+                        title="Drone Remote Collaboration Demo"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            
+            <div class="project-sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Team Members</h3>
+                    <div class="team-members">
+                        {project.collaborators.map(member => (
+                            <div class="team-member">
+                                <img src={member.avatar} alt={member.name} class="member-avatar">
+                                <div class="member-info">
+                                    <div class="member-name">{member.name}</div>
+                                    <div class="member-role">{member.role}, {member.affiliation}</div>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+                
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Related Publications</h3>
+                    <ul class="related-publications">
+                        {project.relatedPublications.map(pub => (
+                            <li>
+                                <a href={pub.link}>{pub.title}</a>
+                                <span class="publication-venue">{pub.venue}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</MainLayout>
+
+<style>
+    .project-container {
+        padding: 2rem 0 4rem;
+    }
+    
+    .project-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .project-title {
+        font-size: 2.5rem;
+        font-weight: 400;
+        margin-bottom: 1rem;
+        font-family: var(--font-serif);
+        color: var(--color-text);
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-title:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .project-meta {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        color: var(--color-text-light);
+    }
+    
+    .project-featured-image {
+        margin-bottom: 2.5rem;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: var(--shadow);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .project-featured-image img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+    }
+    
+    .project-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+    }
+    
+    .project-main h2 {
+        font-family: var(--font-serif);
+        font-weight: 500;
+        font-size: 1.5rem;
+        margin: 2rem 0 1rem;
+        color: var(--color-text);
+        border-bottom: 1px solid var(--color-border);
+        padding-bottom: 0.5rem;
+    }
+    
+    .project-main h2:first-child {
+        margin-top: 0;
+    }
+    
+    .project-main p, 
+    .project-main ul, 
+    .project-main ol {
+        margin-bottom: 1.5rem;
+        color: var(--color-text);
+    }
+    
+    .project-main ul, 
+    .project-main ol {
+        padding-left: 1.5rem;
+    }
+    
+    .project-main li {
+        margin-bottom: 0.5rem;
+    }
+    
+    .project-main strong {
+        color: var(--color-primary);
+        font-weight: 500;
+    }
+    
+    .project-sidebar {
+        position: sticky;
+        top: 6rem;
+        align-self: start;
+    }
+    
+    .sidebar-section {
+        margin-bottom: 2.5rem;
+        background-color: var(--color-background);
+        border-radius: 5px;
+        padding: 1.5rem;
+        border: 1px solid var(--color-border);
+    }
+    
+    .sidebar-title {
+        font-size: 1.1rem;
+        font-weight: 500;
+        margin-bottom: 1.25rem;
+        padding-bottom: 0.5rem;
+        position: relative;
+        color: var(--color-text);
+    }
+    
+    .sidebar-title::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background-color: var(--color-primary);
+    }
+    
+    .team-members {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .team-member {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .member-avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--color-primary-light);
+    }
+    
+    .member-info {
+        flex-grow: 1;
+    }
+    
+    .member-name {
+        font-weight: 500;
+        color: var(--color-text);
+    }
+    
+    .member-role {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+    }
+    
+    .related-publications li {
+        margin-bottom: 1rem;
+    }
+    
+    .related-publications a {
+        display: block;
+        color: var(--color-primary);
+        margin-bottom: 0.25rem;
+        font-weight: 500;
+    }
+    
+    .related-publications a:hover {
+        color: var(--color-accent);
+    }
+    
+    .publication-venue {
+        font-size: 0.9rem;
+        color: var(--color-text-light);
+        font-style: italic;
+    }
+    
+    .video-container {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        position: relative;
+        padding-top: 56.25%; /* 16:9 aspect ratio */
+    }
+    
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+    
+    @media (max-width: 768px) {
+        .project-content {
+            grid-template-columns: 1fr;
+        }
+        
+        .project-sidebar {
+            position: static;
+            margin-top: 2rem;
+        }
+    }
+</style> 
