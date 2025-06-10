@@ -254,7 +254,7 @@ const publicationsByYear: Record<string, Publication[]> = {
                                                     {key.charAt(0).toUpperCase() + key.slice(1)}
                                                 </button>
                                             ) : (
-                                                <a href={url} class="publication-link" target={key === 'doi' ? '_blank' : '_self'}>
+                                                <a href={url.replace('/about', '/MyPage/about').replace('/research', '/MyPage/research').replace('/publications', '/MyPage/publications')} class="publication-link" target={key === 'doi' ? '_blank' : '_self'}>
                                                     {key === 'doi' ? 'DOI' : key.charAt(0).toUpperCase() + key.slice(1)}
                                                 </a>
                                             )
